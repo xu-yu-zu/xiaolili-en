@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遇见 - 温暖瞬间</title>
+    <style>
+        :root {
+            /* 提取气泡的粉色调 */
+            --pink-soft: #ffdae9;
+            --pink-warm: #fbc2eb;
+            --bg-gradient: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            --text-color: #7d5a5a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            overflow: hidden;
+        }
+
+        /* 沉浸式背景：淡淡的粉色光晕 */
+        .glow-bg {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at 70% 20%, rgba(251, 194, 235, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 10% 80%, rgba(253, 252, 251, 0.5) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .main-container {
+            position: relative;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* 图片美化：柔和阴影与呼吸感 */
+        .photo-wrapper {
+            position: relative;
+            padding: 10px;
+            background: white;
+            border-radius: 4px; /* 拍立得相纸质感 */
+            box-shadow: 0 15px 35px rgba(125, 90, 90, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .photo-wrapper:hover {
+            transform: translateY(-5px) rotate(1deg);
+        }
+
+        img {
+            display: block;
+            max-width: 85vw;
+            max-height: 80vh;
+            border-radius: 2px;
+            /* 柔化边缘 */
+            filter: contrast(1.02) brightness(1.02);
+        }
+
+        /* 温馨文字介绍 */
+        .caption {
+            margin-top: 25px;
+            color: var(--text-color);
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            opacity: 0.8;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        /* 装饰：粉色气泡心形 (可选) */
+        .heart {
+            color: #fbc2eb;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            img { max-width: 92vw; }
+            .caption { font-size: 16px; letter-spacing: 2px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-bg"></div>
+
+    <div class="main-container">
+        <div class="photo-wrapper">
+            <!-- 确保你的文件名是 xiaolili-en.jpg -->
+            <img src="xiaolili-en.jpg" alt="Beautiful Moment">
+        </div>
+        
+        <div class="caption">
+            温柔时光 <span class="heart">❤</span> 岁月静好
+        </div>
+    </div>
+
+</body>
+</html>
